@@ -219,9 +219,9 @@
         .gear-skill-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.88rem; font-family: 'Noto Sans KR', sans-serif; }
         .gear-skill-item span { color: #fff; font-weight: 500; display: flex; align-items: center; gap: 8px; }
         .gear-skill-item i { color: var(--pubg-yellow); width: 16px; text-align: center; }
-        .gear-skill-item .stat-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; color: var(--pubg-gold); font-size: 0.9rem; }
+        .gear-skill-item .stat-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; color: var(--pubg-gold); font-size: 0.95rem; }
 
-        /* --- 7. MODAL VIEW (하단 여백 및 스크롤 확장 개편) --- */
+        /* --- 7. MODAL VIEW (하단 여백 및 스크롤 최적화) --- */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 7, 10, 0.95); z-index: 10005; justify-content: center; align-items: center; backdrop-filter: blur(12px); cursor: pointer; }
         .modal-content { background: var(--pubg-dark); border: 2px solid var(--pubg-yellow); border-radius: 2px; width: 96%; max-width: 1300px; height: 92vh; overflow: hidden; position: relative; display: flex; flex-direction: column; cursor: default; box-shadow: 0 0 50px rgba(255, 158, 0, 0.3); }
         
@@ -238,12 +238,10 @@
         .close-system-btn:hover { background: var(--pubg-yellow); color: #000; box-shadow: 0 0 15px var(--pubg-yellow); }
 
         .modal-body-scroll { flex-grow: 1; overflow-y: auto; scroll-behavior: smooth; }
-        
-        /* [핵심 수정] 하단 패딩을 120px로 확장하여 스크롤이 끝까지 깊숙하게 내려가도록 교정 */
-        .modal-inner-content { padding: 20px 30px 120px; } 
+        .modal-inner-content { padding: 20px 30px 30px; } 
         
         .game-desc-panel { background: var(--pubg-card); border-left: 4px solid var(--pubg-yellow); padding: 14px 18px; margin-bottom: 15px; text-align: left; font-size: 0.92rem; font-family: 'Noto Sans KR', sans-serif; }
-        .mission-log { border: 1px solid var(--pubg-border); border-top: 3px solid var(--pubg-yellow); padding: 16px 20px; margin-bottom: 25px; background: var(--pubg-card); text-align: left; font-family: 'Noto Sans KR', sans-serif; }
+        .mission-log { border: 1px solid var(--pubg-border); border-top: 3px solid var(--pubg-yellow); padding: 16px 20px; margin-bottom: 20px; background: var(--pubg-card); text-align: left; font-family: 'Noto Sans KR', sans-serif; }
         .mission-log h4 { color: var(--pubg-yellow); margin-bottom: 10px; font-size: 1rem; font-weight: 700; }
         .mission-log li { margin-bottom: 8px; color: var(--text-main); position: relative; padding-left: 24px; list-style: none; font-size: 0.88rem; line-height: 1.45; }
         .mission-log li::before { content: "🪂"; position: absolute; left: 0; font-size: 0.8rem; top: 1px; }
@@ -253,18 +251,17 @@
         .asset-btn { padding: 6px 16px; background: var(--pubg-card); border: 1px solid var(--pubg-border); color: var(--text-sub); cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: 0.2s; font-family: 'Barlow Condensed', sans-serif; }
         .asset-btn.active { background: var(--pubg-yellow); color: #000; border-color: var(--pubg-yellow); box-shadow: 0 0 10px rgba(255, 158, 0, 0.4); }
 
-        /* [핵심 수정] 뷰어 컨테이너 하단 여백 및 PDF 마진 대폭 추가 */
-        .viewer-container { width: 100%; background: #07090c; padding: 25px 0 60px; border-top: 1px solid var(--pubg-border); border-bottom: 1px solid var(--pubg-border); text-align: center; }
+        .viewer-container { width: 100%; background: #07090c; padding: 20px 0 30px; border-top: 1px solid var(--pubg-border); border-bottom: 1px solid var(--pubg-border); text-align: center; }
         
-        .pdf-viewer { width: 82%; height: 660px; display: none; margin: 0 auto 50px; border: 1px solid var(--pubg-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .pdf-viewer { width: 82%; height: 660px; display: none; margin: 0 auto 25px; border: 1px solid var(--pubg-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .pdf-viewer.narrow { width: 56% !important; } 
         .pdf-viewer.active { display: block; }
         
-        .video-container { width: 82%; aspect-ratio: 16 / 9; display: none; margin: 0 auto 50px; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .video-container { width: 82%; aspect-ratio: 16 / 9; display: none; margin: 0 auto 25px; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .video-container.active { display: block; }
         .video-container iframe { width: 100%; height: 100%; border: none; }
 
-        .excel-combined-container { display: none; flex-direction: column; align-items: center; width: 82%; margin: 0 auto 50px; gap: 20px; }
+        .excel-combined-container { display: none; flex-direction: column; align-items: center; width: 82%; margin: 0 auto 25px; gap: 20px; }
         .excel-combined-container.active { display: flex !important; }
         .combined-video-frame { width: 100% !important; aspect-ratio: 16/9; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .combined-video-frame iframe { width: 100%; height: 100%; border: none; }
@@ -326,7 +323,7 @@
         <div class="hero-content">
             <div class="winner-banner">WINNER WINNER CHICKEN DINNER!</div>
             <h1><span id="typing-text"></span><span class="cursor-blink">_</span></h1>
-            <div id="profile-box" class="main-slogan-text">"끈기 있는 데이터 기반의 게임 체인저 // 이재영"</div>
+            <div id="profile-box" class="main-slogan-text">"끈기 있는 데이터 기반의 게임 체인저"</div>
         </div>
     </header>
 
@@ -337,7 +334,6 @@
                 <span class="pubg-tag-icon">PUBG</span>
                 <h2>MISSION STAGES (10 CAREER LOGS)</h2>
             </div>
-            <span style="font-size: 0.85rem; color: var(--text-sub);">크래프톤 & PUBG 지원 전용 포트폴리오</span>
         </div>
 
         <div class="project-filter-bar">
@@ -399,7 +395,7 @@
                 <div class="card-info-box">
                     <div>
                         <div class="tag">SHOOTING MECHANICS</div>
-                        <h3>신규 총기 기획 제안</h3>
+                        <h3>배틀그라운드 신규 총기 기획</h3>
                         <ul class="card-summary-list">
                             <li>실제 총기 고증 기반 2점사 하이퍼 버스트 메커니즘 설계</li>
                             <li>자체 제작 엑셀 시뮬레이터 활용 TTK 최적값 도출</li>
@@ -509,7 +505,6 @@
                 <span class="pubg-tag-icon">EQUIPMENT</span>
                 <h2>SURVIVOR LOADOUT & ATTACHMENTS</h2>
             </div>
-            <span style="font-size: 0.85rem; color: var(--text-sub);">실무 기획 및 데이터 분석 스펙</span>
         </div>
         
         <div class="loadout-grid">
@@ -519,10 +514,10 @@
                     <span class="gear-lvl">FULL SPEC</span>
                 </div>
                 <div class="gear-skill-list">
-                    <div class="gear-skill-item"><span><i class="fab fa-jira"></i> Jira</span> <span class="stat-val">MASTER</span></div>
-                    <div class="gear-skill-item"><span><i class="fab fa-slack"></i> Slack</span> <span class="stat-val">MASTER</span></div>
-                    <div class="gear-skill-item"><span><i class="fab fa-confluence"></i> Confluence</span> <span class="stat-val">MASTER</span></div>
-                    <div class="gear-skill-item"><span><i class="fas fa-file-alt"></i> Notion</span> <span class="stat-val">ADVANCED</span></div>
+                    <div class="gear-skill-item"><span><i class="fab fa-jira"></i> Jira</span> <span class="stat-val">LV.3</span></div>
+                    <div class="gear-skill-item"><span><i class="fab fa-slack"></i> Slack</span> <span class="stat-val">LV.3</span></div>
+                    <div class="gear-skill-item"><span><i class="fab fa-confluence"></i> Confluence</span> <span class="stat-val">LV.3</span></div>
+                    <div class="gear-skill-item"><span><i class="fas fa-file-alt"></i> Notion</span> <span class="stat-val">LV.2</span></div>
                 </div>
             </div>
 
@@ -532,10 +527,10 @@
                     <span class="gear-lvl">FULL SPEC</span>
                 </div>
                 <div class="gear-skill-list">
-                    <div class="gear-skill-item"><span><i class="fas fa-file-excel"></i> Excel (VBA/수치)</span> <span class="stat-val">ADVANCED</span></div>
-                    <div class="gear-skill-item"><span><i class="fas fa-file-powerpoint"></i> PowerPoint</span> <span class="stat-val">ADVANCED</span></div>
-                    <div class="gear-skill-item"><span><i class="fab fa-figma"></i> Figma</span> <span class="stat-val">ADVANCED</span></div>
-                    <div class="gear-skill-item"><span><i class="fas fa-brain"></i> NotebookLM / AI</span> <span class="stat-val">ADVANCED</span></div>
+                    <div class="gear-skill-item"><span><i class="fas fa-file-excel"></i> Excel (VBA/수치)</span> <span class="stat-val">LV.2</span></div>
+                    <div class="gear-skill-item"><span><i class="fas fa-file-powerpoint"></i> PowerPoint</span> <span class="stat-val">LV.2</span></div>
+                    <div class="gear-skill-item"><span><i class="fab fa-figma"></i> Figma</span> <span class="stat-val">LV.2</span></div>
+                    <div class="gear-skill-item"><span><i class="fas fa-brain"></i> NotebookLM / AI</span> <span class="stat-val">LV.2</span></div>
                 </div>
             </div>
 
@@ -545,10 +540,10 @@
                     <span class="gear-lvl">FULL SPEC</span>
                 </div>
                 <div class="gear-skill-list">
-                    <div class="gear-skill-item"><span><i class="fas fa-cubes"></i> GameMaker (GML)</span> <span class="stat-val">ADVANCED</span></div>
-                    <div class="gear-skill-item"><span><i class="fab fa-unity"></i> Unity 3D</span> <span class="stat-val">INTERMEDIATE</span></div>
-                    <div class="gear-skill-item"><span><i class="fas fa-star-of-life"></i> Gemini AI API</span> <span class="stat-val">ADVANCED</span></div>
-                    <div class="gear-skill-item"><span><i class="fas fa-map-marked-alt"></i> QGIS</span> <span class="stat-val">INTERMEDIATE</span></div>
+                    <div class="gear-skill-item"><span><i class="fas fa-cubes"></i> GameMaker (GML)</span> <span class="stat-val">LV.2</span></div>
+                    <div class="gear-skill-item"><span><i class="fab fa-unity"></i> Unity 3D</span> <span class="stat-val">LV.1</span></div>
+                    <div class="gear-skill-item"><span><i class="fas fa-star-of-life"></i> Gemini AI API</span> <span class="stat-val">LV.2</span></div>
+                    <div class="gear-skill-item"><span><i class="fas fa-map-marked-alt"></i> QGIS</span> <span class="stat-val">LV.1</span></div>
                 </div>
             </div>
         </div>
@@ -642,7 +637,7 @@
                 ] 
             },
             { 
-                title: "신규 총기 기획 제안", tag: "SHOOTING MECHANICS", 
+                title: "배틀그라운드 신규 총기 기획", tag: "SHOOTING MECHANICS", 
                 desc: "FPS 실력 격차 해소를 위해 실제 총기 메커니즘을 고증하고 엑셀 시뮬레이터로 검증한 AN-94 기획안입니다.", 
                 achievements: "<li><span class='highlight-title'>데이터 기반 문제 정의</span>이탈률 지표 분석을 통해 초보자의 '중장거리 교전 무력감'을 핵심 이탈 원인으로 도출</li><li><span class='highlight-title'>하이퍼 버스트 시스템 설계</span>실제 총기 고증을 통한 2점사 로직으로 초보자의 물리적 피지컬 한계 기술적 보완</li><li><span class='highlight-title'>시뮬레이터 기반 최적값 도출</span>자체 제작 엑셀 시뮬레이터를 활용하여 DMR과의 밸런스를 고려한 데미지 및 TTK 최적값 산출</li>", 
                 img: "P7.png", assets: [
@@ -724,7 +719,8 @@
                                 <div class="data-access-card"><p>기획 의도가 담긴 실제 엑셀 시뮬레이션 데이터를 다운로드하세요.</p><a href="${as.downloadUrl}" download class="btn-pixel">DOWNLOAD FILE (.xlsm)</a></div>
                             </div>`;
                 }
-                return `<iframe class="pdf-viewer ${as.isNarrow?'narrow':''} ${isActive}" id="view-${idSuffix}" src="${as.url}#view=Fit&toolbar=0"></iframe>`;
+                /* PDF 자동 줌을 80%로 설정하여 가독성 확보 */
+                return `<iframe class="pdf-viewer ${as.isNarrow?'narrow':''} ${isActive}" id="view-${idSuffix}" src="${as.url}#zoom=80&toolbar=0"></iframe>`;
             }).join('');
 
             document.getElementById('assetTabs').innerHTML = p.assets.map((as, idx) => `<button class="asset-btn ${idx===0?'active':''}" onclick="switchTab(this, '${as.title}-${idx}'.replace(/\\s+/g, '-'), event)">${as.title}</button>`).join('');
