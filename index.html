@@ -12,7 +12,7 @@
     <meta property="og:image" content="https://skh03081-del.github.io/LJY_Portfolio.github.io/S.png">
 
     <!-- 배틀그라운드 전용 택티컬 폰트 (Barlow Condensed, Oswald, Noto Sans KR) -->
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Oswald:wght@500;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800;900&family=Oswald:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -68,28 +68,32 @@
         }
         .compass-strip .north { color: var(--pubg-yellow); font-size: 1rem; text-shadow: 0 0 8px var(--pubg-yellow); }
 
-        /* --- 3. HERO SECTION --- */
+        /* --- 3. HERO SECTION (WINNER BANNER 강조) --- */
         .hero { 
-            position: relative; width: 100%; height: 260px; display: flex; align-items: center; justify-content: center; overflow: hidden; 
+            position: relative; width: 100%; height: 280px; display: flex; align-items: center; justify-content: center; overflow: hidden; 
             border-bottom: 2px solid var(--pubg-yellow);
             background: radial-gradient(circle at center, #18202c 0%, var(--pubg-dark) 85%);
         }
         .hero-bg-marquee { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 1.2s ease; }
         .hero-bg-marquee.visible { opacity: 0.3; }
         .marquee-track { display: flex; width: max-content; animation: scroll-left 55s linear infinite; }
-        .marquee-item { width: 450px; height: 260px; flex-shrink: 0; }
+        .marquee-item { width: 450px; height: 280px; flex-shrink: 0; }
         .marquee-item img { width: 100%; height: 100%; object-fit: cover; filter: blur(1px) brightness(0.6); }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; padding: 10px 0; }
+        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 950px; padding: 10px 0; }
+        
+        /* [수정] WINNER WINNER CHICKEN DINNER! 배너 대폭 확대 및 강렬한 배그 감성 적용 */
         .winner-banner {
             background: var(--pubg-yellow); color: #000; font-family: 'Oswald', sans-serif;
-            font-size: 0.8rem; font-weight: 900; padding: 3px 16px; letter-spacing: 3px;
-            display: inline-block; margin-bottom: 10px; transform: skewX(-12deg);
-            box-shadow: 0 0 15px rgba(255, 158, 0, 0.6);
+            font-size: 1.35rem; font-weight: 900; padding: 6px 28px; letter-spacing: 4px;
+            display: inline-block; margin-bottom: 12px; transform: skewX(-12deg);
+            box-shadow: 0 0 25px rgba(255, 158, 0, 0.85);
+            border: 2px solid #FFFFFF; text-transform: uppercase;
         }
+
         .hero-content h1 { 
-            font-family: 'Oswald', sans-serif; font-size: 2.8rem; color: #fff; margin: 0; 
+            font-family: 'Oswald', sans-serif; font-size: 3rem; color: #fff; margin: 0; 
             letter-spacing: 2px; font-weight: 700; text-transform: uppercase;
             text-shadow: 0 0 25px rgba(255, 158, 0, 0.3);
         }
@@ -98,22 +102,28 @@
         
         .main-slogan-text { 
             margin-top: 14px; padding: 6px 20px; background: rgba(18, 22, 31, 0.9); 
-            border: 1px solid var(--pubg-yellow); display: inline-block; font-size: 1rem; color: #fff; 
+            border: 1px solid var(--pubg-yellow); display: inline-block; font-size: 1.05rem; color: #fff; 
             font-weight: 700; opacity: 0; transition: 0.8s; letter-spacing: 0.5px;
         }
 
         .reveal-section { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .reveal-section.active { opacity: 1; transform: translateY(0); }
 
-        /* --- 4. SECTION HEADER & FILTERS --- */
+        /* --- 4. SECTION HEADER & FILTERS (PUBG 마크 대폭 확대) --- */
         .section-header { 
             max-width: 1250px; margin: 40px auto 16px; padding: 0 20px; display: flex; 
             align-items: center; justify-content: space-between; border-bottom: 2px solid var(--pubg-border);
             padding-bottom: 10px;
         }
-        .section-title-box { display: flex; align-items: center; gap: 12px; }
+        .section-title-box { display: flex; align-items: center; gap: 14px; }
         .section-title-box h2 { font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: #fff; margin: 0; letter-spacing: 1.5px; }
-        .pubg-tag-icon { background: var(--pubg-yellow); color: #000; font-weight: 900; padding: 2px 8px; font-size: 0.75rem; border-radius: 2px; }
+        
+        /* [수정] PUBG 로고 마크 크기 및 가독성 대폭 향상 */
+        .pubg-tag-icon { 
+            background: var(--pubg-yellow); color: #000; font-family: 'Oswald', sans-serif;
+            font-weight: 900; padding: 4px 14px; font-size: 1.15rem; border-radius: 2px; 
+            letter-spacing: 1.5px; box-shadow: 0 0 12px rgba(255, 158, 0, 0.5);
+        }
 
         .project-filter-bar { max-width: 1250px; margin: 0 auto 25px; padding: 0 20px; display: flex; gap: 8px; flex-wrap: wrap; }
         .filter-btn {
@@ -221,7 +231,7 @@
         .gear-skill-item i { color: var(--pubg-yellow); width: 16px; text-align: center; }
         .gear-skill-item .stat-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; color: var(--pubg-gold); font-size: 0.95rem; }
 
-        /* --- 7. MODAL VIEW (PDF 뷰어 비율 및 짤림 교정) --- */
+        /* --- 7. MODAL VIEW (모달 하단 여백 완전 삭제) --- */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 7, 10, 0.95); z-index: 10005; justify-content: center; align-items: center; backdrop-filter: blur(12px); cursor: pointer; }
         .modal-content { background: var(--pubg-dark); border: 2px solid var(--pubg-yellow); border-radius: 2px; width: 96%; max-width: 1300px; height: 92vh; overflow: hidden; position: relative; display: flex; flex-direction: column; cursor: default; box-shadow: 0 0 50px rgba(255, 158, 0, 0.3); }
         
@@ -238,7 +248,9 @@
         .close-system-btn:hover { background: var(--pubg-yellow); color: #000; box-shadow: 0 0 15px var(--pubg-yellow); }
 
         .modal-body-scroll { flex-grow: 1; overflow-y: auto; scroll-behavior: smooth; }
-        .modal-inner-content { padding: 20px 30px 40px; } 
+        
+        /* [수정] 모달 내 하단 패딩 최소화 */
+        .modal-inner-content { padding: 20px 30px 10px; } 
         
         .game-desc-panel { background: var(--pubg-card); border-left: 4px solid var(--pubg-yellow); padding: 14px 18px; margin-bottom: 15px; text-align: left; font-size: 0.92rem; font-family: 'Noto Sans KR', sans-serif; }
         .mission-log { border: 1px solid var(--pubg-border); border-top: 3px solid var(--pubg-yellow); padding: 16px 20px; margin-bottom: 20px; background: var(--pubg-card); text-align: left; font-family: 'Noto Sans KR', sans-serif; }
@@ -251,18 +263,18 @@
         .asset-btn { padding: 6px 16px; background: var(--pubg-card); border: 1px solid var(--pubg-border); color: var(--text-sub); cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: 0.2s; font-family: 'Barlow Condensed', sans-serif; }
         .asset-btn.active { background: var(--pubg-yellow); color: #000; border-color: var(--pubg-yellow); box-shadow: 0 0 10px rgba(255, 158, 0, 0.4); }
 
-        .viewer-container { width: 100%; background: #07090c; padding: 20px 0 30px; border-top: 1px solid var(--pubg-border); border-bottom: 1px solid var(--pubg-border); text-align: center; }
+        /* [수정] 뷰어 상하 여백 완벽 제거 */
+        .viewer-container { width: 100%; background: #07090c; padding: 15px 0 0; border-top: 1px solid var(--pubg-border); border-bottom: none; text-align: center; }
         
-        /* [핵심 수정] PDF 슬라이드가 잘리지 않도록 16:9 비율 및 너비 자동 조절 */
-        .pdf-viewer { width: 95%; height: 680px; aspect-ratio: 16 / 9; display: none; margin: 0 auto 20px; border: 1px solid var(--pubg-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8); background: #12161F; }
+        .pdf-viewer { width: 95%; height: 680px; aspect-ratio: 16 / 9; display: none; margin: 0 auto 0; border: 1px solid var(--pubg-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8); background: #12161F; }
         .pdf-viewer.narrow { width: 58% !important; height: 720px !important; aspect-ratio: auto !important; } 
         .pdf-viewer.active { display: block; }
         
-        .video-container { width: 95%; aspect-ratio: 16 / 9; display: none; margin: 0 auto 20px; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .video-container { width: 95%; aspect-ratio: 16 / 9; display: none; margin: 0 auto 0; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .video-container.active { display: block; }
         .video-container iframe { width: 100%; height: 100%; border: none; }
 
-        .excel-combined-container { display: none; flex-direction: column; align-items: center; width: 95%; margin: 0 auto 20px; gap: 20px; }
+        .excel-combined-container { display: none; flex-direction: column; align-items: center; width: 95%; margin: 0 auto 0; gap: 20px; }
         .excel-combined-container.active { display: flex !important; }
         .combined-video-frame { width: 100% !important; aspect-ratio: 16/9; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .combined-video-frame iframe { width: 100%; height: 100%; border: none; }
@@ -503,7 +515,7 @@
     <div id="loadout-section" class="reveal-section loadout-wrapper">
         <div class="section-header" style="margin-top:0;">
             <div class="section-title-box">
-                <span class="pubg-tag-icon">EQUIPMENT</span>
+                <span class="pubg-tag-icon">PUBG</span>
                 <h2>SURVIVOR LOADOUT & ATTACHMENTS</h2>
             </div>
         </div>
@@ -720,7 +732,6 @@
                                 <div class="data-access-card"><p>기획 의도가 담긴 실제 엑셀 시뮬레이션 데이터를 다운로드하세요.</p><a href="${as.downloadUrl}" download class="btn-pixel">DOWNLOAD FILE (.xlsm)</a></div>
                             </div>`;
                 }
-                /* [핵심 수정] #view=FitH 옵션으로 PDF 문서의 가로 폭을 iframe 너비에 맞춰 자동 확대/축소 */
                 return `<iframe class="pdf-viewer ${as.isNarrow?'narrow':''} ${isActive}" id="view-${idSuffix}" src="${as.url}#view=FitH&toolbar=0&navpanes=0"></iframe>`;
             }).join('');
 
