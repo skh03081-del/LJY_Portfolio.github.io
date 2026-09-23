@@ -43,34 +43,34 @@
             background-size: 32px 32px;
         }
 
-        /* --- 1. 히어로 섹션 (LOBBY HUD STYLE) --- */
+        /* --- 1. 히어로 섹션 --- */
         .hero { 
-            position: relative; width: 100%; height: 260px; display: flex; align-items: center; justify-content: center; overflow: hidden; 
+            position: relative; width: 100%; height: 240px; display: flex; align-items: center; justify-content: center; overflow: hidden; 
             border-bottom: 3px solid var(--pubg-yellow);
             background: radial-gradient(circle at center, #1a222d 0%, var(--pubg-dark) 85%);
         }
         .hero-bg-marquee { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; opacity: 0; transition: opacity 1.2s ease; }
         .hero-bg-marquee.visible { opacity: 0.28; }
         .marquee-track { display: flex; width: max-content; animation: scroll-left 55s linear infinite; }
-        .marquee-item { width: 450px; height: 260px; flex-shrink: 0; }
+        .marquee-item { width: 450px; height: 240px; flex-shrink: 0; }
         .marquee-item img { width: 100%; height: 100%; object-fit: cover; filter: blur(1px) brightness(0.65); }
         @keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
         
-        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 850px; padding: 20px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        .hero-content { position: relative; z-index: 2; text-align: center; max-width: 850px; padding: 15px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         .player-badge {
-            font-size: 0.65rem; color: #0b0e11; background: var(--pubg-yellow);
-            padding: 4px 12px; font-weight: bold; border-radius: 2px; margin-bottom: 12px;
+            font-size: 0.6rem; color: #0b0e11; background: var(--pubg-yellow);
+            padding: 3px 10px; font-weight: bold; border-radius: 2px; margin-bottom: 10px;
             letter-spacing: 2px; box-shadow: 0 0 10px rgba(255,158,0,0.5);
         }
-        .hero-content h1 { font-size: 2.2rem; color: #fff; margin: 0; text-shadow: 0 0 20px rgba(255, 158, 0, 0.4); letter-spacing: 2px; }
+        .hero-content h1 { font-size: 2.1rem; color: #fff; margin: 0; text-shadow: 0 0 20px rgba(255, 158, 0, 0.4); letter-spacing: 2px; }
         .cursor-blink { display: inline-block; width: 14px; animation: blink 0.8s step-end infinite; color: var(--pubg-yellow); }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
         
         .main-slogan-text { 
-            margin-top: 20px; padding: 10px 25px; 
+            margin-top: 15px; padding: 8px 22px; 
             background: rgba(20, 24, 31, 0.9); 
             border: 1px solid var(--pubg-yellow); 
-            display: inline-block; font-size: 1.05rem; color: #fff; 
+            display: inline-block; font-size: 1rem; color: #fff; 
             font-weight: bold; opacity: 0; transition: 0.8s;
             box-shadow: 0 0 20px rgba(255, 158, 0, 0.2);
         }
@@ -80,28 +80,28 @@
 
         /* --- PUBG SECTION TITLE --- */
         .section-title { 
-            max-width: 1200px; margin: 45px auto 20px; padding: 0 20px; font-size: 1.3rem;
+            max-width: 1200px; margin: 40px auto 18px; padding: 0 20px; font-size: 1.25rem;
             letter-spacing: 1.5px; text-align: left; display: flex; align-items: center; justify-content: space-between;
             color: #fff; text-shadow: 0 0 10px rgba(255, 158, 0, 0.3);
         }
         .title-left { display: flex; align-items: center; }
         .title-left::before { 
             content: "MISSION"; 
-            font-size: 0.65rem; font-weight: 900;
+            font-size: 0.6rem; font-weight: 900;
             color: #0b0e11; background: var(--pubg-yellow);
-            padding: 4px 8px; margin-right: 14px; border-radius: 2px;
-            box-shadow: 0 0 12px rgba(255, 158, 0, 0.5);
+            padding: 3px 7px; margin-right: 12px; border-radius: 2px;
+            box-shadow: 0 0 10px rgba(255, 158, 0, 0.5);
             -webkit-text-fill-color: #0b0e11;
         }
 
-        /* --- 2. 프로젝트 필터 버튼 (NEW FEATURE) --- */
+        /* --- 프로젝트 필터 버튼 --- */
         .project-filter-bar {
-            max-width: 1200px; margin: 0 auto 30px; padding: 0 20px;
+            max-width: 1200px; margin: 0 auto 25px; padding: 0 20px;
             display: flex; gap: 10px; flex-wrap: wrap;
         }
         .filter-btn {
             background: var(--pubg-card); border: 1px solid var(--pubg-border);
-            color: var(--text-sub); padding: 8px 18px; font-size: 0.8rem;
+            color: var(--text-sub); padding: 7px 16px; font-size: 0.75rem;
             font-family: 'Press Start 2P', cursive; cursor: pointer; transition: 0.2s;
             border-radius: 2px;
         }
@@ -111,10 +111,10 @@
             border-color: var(--pubg-yellow); box-shadow: 0 0 12px rgba(255, 158, 0, 0.4);
         }
 
-        /* --- 3. 프로젝트 메인 영역 (주인공 강조) --- */
+        /* --- 프로젝트 메인 영역 --- */
         .project-container { 
-            max-width: 1200px; margin: 0 auto 80px; padding: 0 20px; 
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; 
+            max-width: 1200px; margin: 0 auto 70px; padding: 0 20px; 
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; 
         }
 
         .project-card { 
@@ -124,12 +124,12 @@
             border-radius: 4px; cursor: pointer; 
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
             overflow: hidden; position: relative; 
-            display: flex; flex-direction: row; height: 235px; 
+            display: flex; flex-direction: row; height: 220px; 
             box-shadow: 0 10px 24px rgba(0,0,0,0.6);
         }
 
         .project-card:hover { 
-            transform: translateY(-6px); 
+            transform: translateY(-5px); 
             border-color: var(--pubg-yellow); 
             box-shadow: 0 12px 30px rgba(255, 158, 0, 0.35); 
             background: var(--pubg-card-hover);
@@ -141,7 +141,7 @@
             border-right: 2px solid var(--pubg-border); 
             overflow: hidden; position: relative; flex-shrink: 0;
             display: flex; align-items: center; justify-content: center;
-            padding: 12px; box-sizing: border-box;
+            padding: 10px; box-sizing: border-box;
         }
 
         .card-img-box img { 
@@ -153,112 +153,114 @@
         .project-card:hover .card-img-box img { transform: scale(1.08); }
         
         .tag { 
-            display: inline-block; font-size: 0.6rem; color: #0b0e11; font-weight: bold; 
+            display: inline-block; font-size: 0.58rem; color: #0b0e11; font-weight: bold; 
             background: var(--pubg-yellow); padding: 3px 8px; border-radius: 2px; 
-            font-family: 'Press Start 2P'; margin-bottom: 8px; width: fit-content;
+            font-family: 'Press Start 2P'; margin-bottom: 6px; width: fit-content;
         }
         
         .card-info-box { 
-            width: 58%; padding: 22px; text-align: left; 
+            width: 58%; padding: 18px 20px; text-align: left; 
             display: flex; flex-direction: column; justify-content: space-between; 
             box-sizing: border-box;
         }
 
         .card-info-box h3 { 
-            font-size: 1.15rem; margin: 0; color: #fff; 
+            font-size: 1.1rem; margin: 0; color: #fff; 
             letter-spacing: 0.5px; font-weight: bold; 
-            border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 6px;
             line-height: 1.3;
         }
 
         .card-summary-list {
-            margin: 8px 0 0; padding-left: 14px;
-            color: var(--text-sub); font-size: 0.88rem; line-height: 1.5;
+            margin: 6px 0 0; padding-left: 14px;
+            color: var(--text-sub); font-size: 0.85rem; line-height: 1.45;
         }
-        .card-summary-list li { margin-bottom: 4px; }
+        .card-summary-list li { margin-bottom: 3px; }
         .card-summary-list li::marker { color: var(--pubg-yellow); }
 
         .card-more-btn {
-            font-size: 0.7rem; color: var(--pubg-yellow);
-            font-family: 'Press Start 2P'; margin-top: 8px;
+            font-size: 0.68rem; color: var(--pubg-yellow);
+            font-family: 'Press Start 2P'; margin-top: 6px;
             display: flex; align-items: center; gap: 6px; font-weight: bold;
         }
 
-        /* --- 4. 보유 기술 (COMPACT EQUIPPED LOADOUT) --- */
+        /* --- 보유 기술 (COMPACT EQUIPPED LOADOUT) --- */
         .compact-skills-wrapper {
-            max-width: 1200px; margin: 0 auto 100px; padding: 0 20px;
+            max-width: 1200px; margin: 0 auto 80px; padding: 0 20px;
         }
         .skills-grid-compact {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
         }
         .skill-compact-card {
             background: var(--pubg-card); border: 1px solid var(--pubg-border);
-            border-top: 3px solid var(--text-sub); padding: 18px 20px;
+            border-top: 3px solid var(--text-sub); padding: 15px 18px;
             border-radius: 2px;
         }
         .skill-compact-card h4 {
-            margin: 0 0 12px; font-size: 0.85rem; color: var(--pubg-yellow);
-            border-bottom: 1px solid var(--pubg-border); padding-bottom: 8px;
+            margin: 0 0 10px; font-size: 0.82rem; color: var(--pubg-yellow);
+            border-bottom: 1px solid var(--pubg-border); padding-bottom: 6px;
             display: flex; justify-content: space-between; align-items: center;
         }
         .compact-skill-list {
-            display: flex; flex-direction: column; gap: 8px;
+            display: flex; flex-direction: column; gap: 6px;
         }
         .compact-skill-item {
-            display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem;
+            display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem;
         }
         .compact-skill-item span { color: #fff; font-weight: bold; display: flex; align-items: center; gap: 8px; }
         .compact-skill-item i { color: var(--pubg-yellow); width: 16px; text-align: center; }
-        .compact-skill-item .lvl { font-family: 'Press Start 2P'; font-size: 0.6rem; color: var(--pubg-amber); }
+        .compact-skill-item .lvl { font-family: 'Press Start 2P'; font-size: 0.58rem; color: var(--pubg-amber); }
 
-        /* --- 5. 프로젝트 모달 --- */
+        /* --- 5. 프로젝트 모달 (가독성 개편) --- */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 7, 10, 0.95); z-index: 10005; justify-content: center; align-items: center; backdrop-filter: blur(12px); cursor: pointer; }
-        .modal-content { background: var(--pubg-dark); border: 2px solid var(--pubg-yellow); border-radius: 4px; width: 98%; max-width: 1350px; height: 92vh; overflow: hidden; position: relative; display: flex; flex-direction: column; cursor: default; box-shadow: 0 0 50px rgba(255, 158, 0, 0.3); }
+        .modal-content { background: var(--pubg-dark); border: 2px solid var(--pubg-yellow); border-radius: 4px; width: 96%; max-width: 1300px; height: 92vh; overflow: hidden; position: relative; display: flex; flex-direction: column; cursor: default; box-shadow: 0 0 50px rgba(255, 158, 0, 0.3); }
         
-        .project-header-top { width: 100%; height: 120px; position: relative; overflow: hidden; flex-shrink: 0; border-bottom: 2px solid var(--pubg-yellow); display: flex; align-items: center; justify-content: space-between; padding: 0 35px; box-sizing: border-box; background: #121720; }
+        .project-header-top { width: 100%; height: 105px; position: relative; overflow: hidden; flex-shrink: 0; border-bottom: 2px solid var(--pubg-yellow); display: flex; align-items: center; justify-content: space-between; padding: 0 30px; box-sizing: border-box; background: #121720; }
         .header-bg-blur { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; filter: blur(6px) brightness(0.35); opacity: 1; transform: scale(1.1); z-index: 1; }
-        .header-info-content { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 6px; }
-        #modalTag { font-family: 'Press Start 2P'; font-size: 0.75rem; color: var(--pubg-yellow); font-weight: bold; }
-        #modalTitle { margin: 0; font-size: 1.7rem; color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.8); } 
+        .header-info-content { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 4px; }
+        #modalTag { font-family: 'Press Start 2P'; font-size: 0.7rem; color: var(--pubg-yellow); font-weight: bold; }
+        #modalTitle { margin: 0; font-size: 1.55rem; color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.8); } 
         
         .close-system-btn { 
             position: relative; z-index: 3; background: #121720; color: var(--pubg-yellow); border: 2px solid var(--pubg-yellow); 
-            padding: 8px 20px; font-size: 0.85rem; cursor: pointer; transition: 0.3s; font-weight: bold; border-radius: 2px;
+            padding: 7px 18px; font-size: 0.8rem; cursor: pointer; transition: 0.3s; font-weight: bold; border-radius: 2px;
         }
         .close-system-btn:hover { background: var(--pubg-yellow); color: #000; box-shadow: 0 0 15px var(--pubg-yellow); }
 
         .modal-body-scroll { flex-grow: 1; overflow-y: auto; }
-        .modal-inner-content { padding: 25px 50px 0; } 
+        .modal-inner-content { padding: 20px 35px 0; } 
         
-        .game-desc-panel { background: var(--pubg-card); border-left: 5px solid var(--pubg-yellow); border-radius: 0 2px 2px 0; padding: 18px 22px; margin-bottom: 20px; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
-        .mission-log { border: 2px solid var(--pubg-border); border-top: 3px solid var(--pubg-yellow); border-radius: 2px; padding: 22px 25px; margin-bottom: 25px; background: var(--pubg-card); text-align: left; }
-        .mission-log h4 { color: var(--pubg-yellow); margin-bottom: 12px; font-size: 1.1rem; font-weight: bold; }
-        .mission-log li { margin-bottom: 12px; color: var(--text-main); position: relative; padding-left: 28px; list-style: none; font-size: 0.92rem; line-height: 1.5; }
-        .mission-log li::before { content: "🪂"; position: absolute; left: 0; font-size: 0.85rem; top: 2px; }
-        .highlight-title { color: var(--pubg-yellow); font-size: 1rem; font-weight: bold; display: block; margin-bottom: 3px; }
+        .game-desc-panel { background: var(--pubg-card); border-left: 4px solid var(--pubg-yellow); border-radius: 0 2px 2px 0; padding: 14px 18px; margin-bottom: 15px; text-align: left; font-size: 0.92rem; }
+        .mission-log { border: 1px solid var(--pubg-border); border-top: 3px solid var(--pubg-yellow); border-radius: 2px; padding: 16px 20px; margin-bottom: 20px; background: var(--pubg-card); text-align: left; }
+        .mission-log h4 { color: var(--pubg-yellow); margin-bottom: 10px; font-size: 1rem; font-weight: bold; }
+        .mission-log li { margin-bottom: 8px; color: var(--text-main); position: relative; padding-left: 24px; list-style: none; font-size: 0.88rem; line-height: 1.45; }
+        .mission-log li::before { content: "🪂"; position: absolute; left: 0; font-size: 0.8rem; top: 1px; }
+        .highlight-title { color: var(--pubg-yellow); font-size: 0.95rem; font-weight: bold; display: block; margin-bottom: 2px; }
 
-        .asset-selector { display: flex; gap: 8px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; background: var(--pubg-dark); padding: 12px 0; border-bottom: 2px solid var(--pubg-border); }
-        .asset-btn { padding: 8px 20px; background: var(--pubg-card); border: 1px solid var(--pubg-border); color: var(--text-sub); cursor: pointer; font-size: 0.85rem; font-weight: bold; transition: 0.2s; }
-        .asset-btn.active { background: var(--pubg-yellow); color: #000; border-color: var(--pubg-yellow); box-shadow: 0 0 12px rgba(255, 158, 0, 0.4); }
+        .asset-selector { display: flex; gap: 8px; flex-wrap: wrap; position: sticky; top: 0; z-index: 1000; background: var(--pubg-dark); padding: 10px 0; border-bottom: 1px solid var(--pubg-border); }
+        .asset-btn { padding: 7px 18px; background: var(--pubg-card); border: 1px solid var(--pubg-border); color: var(--text-sub); cursor: pointer; font-size: 0.8rem; font-weight: bold; transition: 0.2s; }
+        .asset-btn.active { background: var(--pubg-yellow); color: #000; border-color: var(--pubg-yellow); box-shadow: 0 0 10px rgba(255, 158, 0, 0.4); }
 
-        .viewer-container { width: 100%; background: #07090c; padding: 30px 0 0; border-top: 1px solid var(--pubg-border); text-align: center; }
-        .pdf-viewer { width: 85%; height: 800px; display: none; margin: 0 auto; border: 1px solid var(--pubg-border); }
-        .pdf-viewer.narrow { width: 68% !important; } 
+        .viewer-container { width: 100%; background: #07090c; padding: 25px 0 0; border-top: 1px solid var(--pubg-border); text-align: center; }
+        /* [중요 최적화] PDF 뷰어 높이 620px 및 폭 슬림화로 줌 현상 해결 */
+        .pdf-viewer { width: 80%; height: 620px; display: none; margin: 0 auto; border: 1px solid var(--pubg-border); }
+        .pdf-viewer.narrow { width: 55% !important; } 
         .pdf-viewer.active { display: block; }
-        .video-container { width: 85%; aspect-ratio: 16 / 9; display: none; margin: 0 auto; margin-bottom: 50px; border: 2px solid var(--pubg-yellow); overflow: hidden; }
+        
+        .video-container { width: 80%; aspect-ratio: 16 / 9; display: none; margin: 0 auto; margin-bottom: 40px; border: 2px solid var(--pubg-yellow); overflow: hidden; }
         .video-container.active { display: block; }
         .video-container iframe { width: 100%; height: 100%; border: none; }
 
-        .excel-combined-container { display: none; flex-direction: column; align-items: center; width: 85%; margin: 0 auto; padding-bottom: 50px; gap: 25px; }
+        .excel-combined-container { display: none; flex-direction: column; align-items: center; width: 80%; margin: 0 auto; padding-bottom: 40px; gap: 20px; }
         .excel-combined-container.active { display: flex !important; }
-        .combined-video-frame { width: 100% !important; aspect-ratio: 16/9; border: 2px solid var(--pubg-yellow); margin-bottom: 10px; overflow: hidden; }
+        .combined-video-frame { width: 100% !important; aspect-ratio: 16/9; border: 2px solid var(--pubg-yellow); margin-bottom: 5px; overflow: hidden; }
         .combined-video-frame iframe { width: 100%; height: 100%; border: none; }
         
-        .data-access-card { width: 100%; padding: 35px; background: var(--pubg-card); border: 2px solid var(--pubg-border); border-top: 3px solid var(--pubg-yellow); text-align: center; position: relative; }
-        .data-access-card::before { content: "SUPPLY DROP DATA ACCESS ESTABLISHED"; position: absolute; top: 10px; left: 15px; font-family: 'Press Start 2P'; font-size: 0.55rem; color: var(--pubg-yellow); opacity: 0.85; }
-        .data-access-card p { margin-bottom: 20px; font-weight: bold; color: #fff; font-size: 1rem; }
+        .data-access-card { width: 100%; padding: 28px; background: var(--pubg-card); border: 1px solid var(--pubg-border); border-top: 3px solid var(--pubg-yellow); text-align: center; position: relative; }
+        .data-access-card::before { content: "SUPPLY DROP DATA ACCESS ESTABLISHED"; position: absolute; top: 8px; left: 12px; font-family: 'Press Start 2P'; font-size: 0.5rem; color: var(--pubg-yellow); opacity: 0.85; }
+        .data-access-card p { margin-bottom: 18px; font-weight: bold; color: #fff; font-size: 0.95rem; }
 
-        .btn-pixel { padding: 12px 28px; background: var(--pubg-yellow); color: #0b0e11; border: none; cursor: pointer; font-weight: bold; box-shadow: 0 0 12px rgba(255,158,0,0.4); text-decoration: none; display: inline-block; font-family: 'Press Start 2P', cursive; font-size: 0.75rem; }
+        .btn-pixel { padding: 10px 24px; background: var(--pubg-yellow); color: #0b0e11; border: none; cursor: pointer; font-weight: bold; box-shadow: 0 0 10px rgba(255,158,0,0.4); text-decoration: none; display: inline-block; font-family: 'Press Start 2P', cursive; font-size: 0.7rem; }
         .btn-pixel:hover { background: #fff; color: #000; }
 
         @media (max-width: 900px) { 
@@ -266,7 +268,7 @@
             .skills-grid-compact { grid-template-columns: 1fr; }
             .project-card { flex-direction: column; height: auto; }
             .card-img-box { width: 100%; height: 180px; border-right: none; border-bottom: 2px solid var(--pubg-border); }
-            .card-info-box { width: 100%; padding: 18px 20px; }
+            .card-info-box { width: 100%; padding: 16px 18px; }
             .pdf-viewer, .video-container, .combined-video-frame, .data-access-card { width: 95% !important; } 
         }
     </style>
@@ -297,14 +299,14 @@
         </div>
     </header>
 
-    <!-- 2. 프로젝트 영역 (주인공: MISSION STAGES) -->
+    <!-- 2. 프로젝트 영역 -->
     <div id="stage-section" class="reveal-section">
         <div class="section-title">
             <div class="title-left">MISSION STAGES</div>
             <span style="font-size: 0.75rem; color: var(--text-sub); font-family: 'Galmuri9'; font-weight: normal;">총 10개의 핵심 기획 보고서 및 시뮬레이터</span>
         </div>
 
-        <!-- 프로젝트 분류 필터 -->
+        <!-- 카테고리 필터 -->
         <div class="project-filter-bar">
             <button class="filter-btn active" onclick="filterProjects('ALL', this)">ALL</button>
             <button class="filter-btn" onclick="filterProjects('BM', this)">BM & ECONOMY</button>
@@ -315,7 +317,6 @@
         <!-- 프로젝트 카드 그리드 -->
         <div class="project-container" id="projectGrid">
             
-            <!-- 1. 던파 라이브 이벤트·BM 분석 -->
             <div class="project-card" data-cat="BM" onclick="openModal(0, event)">
                 <div class="card-img-box"><img src="P10.png"></div>
                 <div class="card-info-box">
@@ -331,7 +332,6 @@
                 </div>
             </div>
 
-            <!-- 2. FCO 신규 시스템 설계 -->
             <div class="project-card" data-cat="BM SYSTEM" onclick="openModal(1, event)">
                 <div class="card-img-box"><img src="P4.png"></div>
                 <div class="card-info-box">
@@ -347,7 +347,6 @@
                 </div>
             </div>
 
-            <!-- 3. FCO 라이브 서비스 개선 -->
             <div class="project-card" data-cat="SYSTEM" onclick="openModal(2, event)">
                 <div class="card-img-box"><img src="P3.png"></div>
                 <div class="card-info-box">
@@ -363,13 +362,12 @@
                 </div>
             </div>
 
-            <!-- 4. 신규 총기 기획 제안 -->
             <div class="project-card" data-cat="DEV" onclick="openModal(3, event)">
                 <div class="card-img-box"><img src="P7.png"></div>
                 <div class="card-info-box">
                     <div>
                         <div class="tag">SHOOTING QUEST</div>
-                        <h3>신규 총기 기획 제안</h3>
+                        <h3>배틀그라운드 신규 총기 기획</h3>
                         <ul class="card-summary-list">
                             <li>실제 총기 고증 기반 2점사 하이퍼 버스트 메커니즘 설계</li>
                             <li>자체 제작 엑셀 시뮬레이터 활용 TTK 최적값 도출</li>
@@ -379,7 +377,6 @@
                 </div>
             </div>
 
-            <!-- 5. 아크레이더스 PVPVE 분석 -->
             <div class="project-card" data-cat="DEV" onclick="openModal(4, event)">
                 <div class="card-img-box"><img src="P9.jpg"></div>
                 <div class="card-info-box">
@@ -395,7 +392,6 @@
                 </div>
             </div>
 
-            <!-- 6. 밸런스 시뮬레이터 -->
             <div class="project-card" data-cat="SYSTEM DEV" onclick="openModal(5, event)">
                 <div class="card-img-box"><img src="P6_1.PNG"></div>
                 <div class="card-info-box">
@@ -411,7 +407,6 @@
                 </div>
             </div>
 
-            <!-- 7. 다인 협업 프로젝트 -->
             <div class="project-card" data-cat="DEV" onclick="openModal(6, event)">
                 <div class="card-img-box"><img src="P2.png"></div>
                 <div class="card-info-box">
@@ -427,7 +422,6 @@
                 </div>
             </div>
 
-            <!-- 8. 자체 개발 ( 디펜스 게임 ) -->
             <div class="project-card" data-cat="DEV" onclick="openModal(7, event)">
                 <div class="card-img-box"><img src="P8.png"></div>
                 <div class="card-info-box">
@@ -443,7 +437,6 @@
                 </div>
             </div>
 
-            <!-- 9. 자체 개발 ( 리듬 게임 ) -->
             <div class="project-card" data-cat="DEV" onclick="openModal(8, event)">
                 <div class="card-img-box"><img src="P1.png"></div>
                 <div class="card-info-box">
@@ -459,7 +452,6 @@
                 </div>
             </div>
 
-            <!-- 10. 데이터 기반 분석 -->
             <div class="project-card" data-cat="BM SYSTEM" onclick="openModal(9, event)">
                 <div class="card-img-box"><img src="P5.png"></div>
                 <div class="card-info-box">
@@ -478,10 +470,10 @@
         </div>
     </div>
 
-    <!-- 3. 보유 기술 (COMPACT EQUIPPED LOADOUT - 하단 축소 배치) -->
+    <!-- 3. 보유 기술 -->
     <div id="ability-section" class="reveal-section compact-skills-wrapper">
-        <div class="section-title" style="margin-top: 0; margin-bottom: 15px;">
-            <div class="title-left" style="font-size: 1.1rem;">EQUIPPED LOADOUT</div>
+        <div class="section-title" style="margin-top: 0; margin-bottom: 12px;">
+            <div class="title-left" style="font-size: 1.05rem;">EQUIPPED LOADOUT</div>
             <span style="font-size: 0.75rem; color: var(--text-sub); font-family: 'Galmuri9'; font-weight: normal;">실무 기획 및 분석 툴 보유 현황</span>
         </div>
         
@@ -566,7 +558,6 @@
             nameTarget.textContent = ""; type();
         }
 
-        /* 프로젝트 카테고리 필터링 기능 */
         function filterProjects(cat, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -607,7 +598,7 @@
                 ] 
             },
             { 
-                title: "신규 총기 기획 제안", tag: "SHOOTING QUEST", 
+                title: "배틀그라운드 신규 총기 기획", tag: "SHOOTING QUEST", 
                 desc: "FPS 실력 격차 해소를 위해 실제 총기 메커니즘을 고증하고 엑셀 시뮬레이터로 검증한 AN-94 기획안입니다.", 
                 achievements: "<li><span class='highlight-title'>데이터 기반 문제 정의</span>이탈률 지표 분석을 통해 초보자의 '중장거리 교전 무력감'을 핵심 이탈 원인으로 도출</li><li><span class='highlight-title'>하이퍼 버스트 시스템 설계</span>실제 총기 고증을 통한 2점사 로직으로 초보자의 물리적 피지컬 한계 기술적 보완</li><li><span class='highlight-title'>시뮬레이터 기반 최적값 도출</span>자체 제작 엑셀 시뮬레이터를 활용하여 DMR과의 밸런스를 고려한 데미지 및 TTK 최적값 산출</li>", 
                 img: "P7.png", assets: [
@@ -668,6 +659,7 @@
             }
         ];
 
+        /* [핵심 수정] PDF 오픈 시 #view=Fit 자동 프레임 맞춤 옵션 적용 */
         function openModal(i, e) {
             if(e) e.stopPropagation();
             const p = projects[i];
@@ -689,7 +681,8 @@
                                 <div class="data-access-card"><i class="fas fa-file-excel" style="font-size:2rem; margin-bottom:15px; color:var(--pubg-yellow);"></i><p>기획 의도가 담긴 실제 엑셀 시뮬레이션 데이터를 다운로드하세요.</p><a href="${as.downloadUrl}" download class="btn-pixel">DOWNLOAD FILE (.xlsm)</a></div>
                             </div>`;
                 }
-                return `<iframe class="pdf-viewer ${as.isNarrow?'narrow':''} ${isActive}" id="view-${idSuffix}" src="${as.url}#view=FitH&toolbar=0"></iframe>`;
+                /* PDF 자동 줌을 #view=Fit으로 전체 페이지 가독성 확보 */
+                return `<iframe class="pdf-viewer ${as.isNarrow?'narrow':''} ${isActive}" id="view-${idSuffix}" src="${as.url}#view=Fit&toolbar=0"></iframe>`;
             }).join('');
 
             document.getElementById('assetTabs').innerHTML = p.assets.map((as, idx) => `<button class="asset-btn ${idx===0?'active':''}" onclick="switchTab(this, '${as.title}-${idx}'.replace(/\\s+/g, '-'), event)">${as.title}</button>`).join('');
