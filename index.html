@@ -68,7 +68,7 @@
         }
         .compass-strip .north { color: var(--pubg-yellow); font-size: 1rem; text-shadow: 0 0 8px var(--pubg-yellow); }
 
-        /* --- 3. HERO SECTION (WINNER BANNER 강조) --- */
+        /* --- 3. HERO SECTION (WINNER BANNER 애니메이션 수정) --- */
         .hero { 
             position: relative; width: 100%; height: 280px; display: flex; align-items: center; justify-content: center; overflow: hidden; 
             border-bottom: 2px solid var(--pubg-yellow);
@@ -83,13 +83,20 @@
         
         .hero-content { position: relative; z-index: 2; text-align: center; max-width: 950px; padding: 10px 0; }
         
-        /* [수정] WINNER WINNER CHICKEN DINNER! 배너 대폭 확대 및 강렬한 배그 감성 적용 */
+        /* [핵심 연출 수정] 초기 상태 숨김 ➔ 이름 작성 완료 후 게임처럼 쾅! 등장 */
         .winner-banner {
             background: var(--pubg-yellow); color: #000; font-family: 'Oswald', sans-serif;
             font-size: 1.35rem; font-weight: 900; padding: 6px 28px; letter-spacing: 4px;
-            display: inline-block; margin-bottom: 12px; transform: skewX(-12deg);
-            box-shadow: 0 0 25px rgba(255, 158, 0, 0.85);
+            display: inline-block; margin-bottom: 12px; transform: skewX(-12deg) scale(1.8);
+            box-shadow: 0 0 35px rgba(255, 158, 0, 0.95);
             border: 2px solid #FFFFFF; text-transform: uppercase;
+            opacity: 0; filter: blur(10px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease, filter 0.4s ease;
+        }
+        .winner-banner.visible {
+            opacity: 1;
+            filter: blur(0);
+            transform: skewX(-12deg) scale(1);
         }
 
         .hero-content h1 { 
@@ -109,7 +116,7 @@
         .reveal-section { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
         .reveal-section.active { opacity: 1; transform: translateY(0); }
 
-        /* --- 4. SECTION HEADER & FILTERS (PUBG 마크 대폭 확대) --- */
+        /* --- 4. SECTION HEADER & FILTERS --- */
         .section-header { 
             max-width: 1250px; margin: 40px auto 16px; padding: 0 20px; display: flex; 
             align-items: center; justify-content: space-between; border-bottom: 2px solid var(--pubg-border);
@@ -118,7 +125,6 @@
         .section-title-box { display: flex; align-items: center; gap: 14px; }
         .section-title-box h2 { font-family: 'Oswald', sans-serif; font-size: 1.6rem; color: #fff; margin: 0; letter-spacing: 1.5px; }
         
-        /* [수정] PUBG 로고 마크 크기 및 가독성 대폭 향상 */
         .pubg-tag-icon { 
             background: var(--pubg-yellow); color: #000; font-family: 'Oswald', sans-serif;
             font-weight: 900; padding: 4px 14px; font-size: 1.15rem; border-radius: 2px; 
@@ -231,7 +237,7 @@
         .gear-skill-item i { color: var(--pubg-yellow); width: 16px; text-align: center; }
         .gear-skill-item .stat-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; color: var(--pubg-gold); font-size: 0.95rem; }
 
-        /* --- 7. MODAL VIEW (모달 하단 여백 완전 삭제) --- */
+        /* --- 7. MODAL VIEW --- */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 7, 10, 0.95); z-index: 10005; justify-content: center; align-items: center; backdrop-filter: blur(12px); cursor: pointer; }
         .modal-content { background: var(--pubg-dark); border: 2px solid var(--pubg-yellow); border-radius: 2px; width: 96%; max-width: 1300px; height: 92vh; overflow: hidden; position: relative; display: flex; flex-direction: column; cursor: default; box-shadow: 0 0 50px rgba(255, 158, 0, 0.3); }
         
@@ -248,8 +254,6 @@
         .close-system-btn:hover { background: var(--pubg-yellow); color: #000; box-shadow: 0 0 15px var(--pubg-yellow); }
 
         .modal-body-scroll { flex-grow: 1; overflow-y: auto; scroll-behavior: smooth; }
-        
-        /* [수정] 모달 내 하단 패딩 최소화 */
         .modal-inner-content { padding: 20px 30px 10px; } 
         
         .game-desc-panel { background: var(--pubg-card); border-left: 4px solid var(--pubg-yellow); padding: 14px 18px; margin-bottom: 15px; text-align: left; font-size: 0.92rem; font-family: 'Noto Sans KR', sans-serif; }
@@ -263,7 +267,6 @@
         .asset-btn { padding: 6px 16px; background: var(--pubg-card); border: 1px solid var(--pubg-border); color: var(--text-sub); cursor: pointer; font-size: 0.85rem; font-weight: 700; transition: 0.2s; font-family: 'Barlow Condensed', sans-serif; }
         .asset-btn.active { background: var(--pubg-yellow); color: #000; border-color: var(--pubg-yellow); box-shadow: 0 0 10px rgba(255, 158, 0, 0.4); }
 
-        /* [수정] 뷰어 상하 여백 완벽 제거 */
         .viewer-container { width: 100%; background: #07090c; padding: 15px 0 0; border-top: 1px solid var(--pubg-border); border-bottom: none; text-align: center; }
         
         .pdf-viewer { width: 95%; height: 680px; aspect-ratio: 16 / 9; display: none; margin: 0 auto 0; border: 1px solid var(--pubg-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8); background: #12161F; }
@@ -334,7 +337,7 @@
             </div>
         </div>
         <div class="hero-content">
-            <div class="winner-banner">WINNER WINNER CHICKEN DINNER!</div>
+            <div id="winner-banner" class="winner-banner">WINNER WINNER CHICKEN DINNER!</div>
             <h1><span id="typing-text"></span><span class="cursor-blink">_</span></h1>
             <div id="profile-box" class="main-slogan-text">"끈기 있는 데이터 기반의 게임 체인저"</div>
         </div>
@@ -584,27 +587,39 @@
         </div>
     </div>
 
+    <!-- 7. SCRIPT (게임 승리 연출 타이밍 적용) -->
     <script>
         window.onload = function() { typeWriterEffect(); };
 
         function typeWriterEffect() {
             const nameTarget = document.getElementById('typing-text');
+            const winnerBanner = document.getElementById('winner-banner');
             const sloganTarget = document.getElementById('profile-box');
             const marqueeBg = document.getElementById('marquee-bg');
             const nameText = "LEE JAE YOUNG";
             let i = 0;
+
             function type() {
                 if (i < nameText.length) {
-                    nameTarget.textContent += nameText.charAt(i); i++;
+                    nameTarget.textContent += nameText.charAt(i); 
+                    i++;
                     setTimeout(type, 100);
                 } else {
-                    sloganTarget.style.opacity = '1';
+                    /* 이름 완성 후 게임 우승 배너 임팩트 노출 */
                     setTimeout(() => {
-                        marqueeBg.classList.add('visible');
-                        document.querySelectorAll('.reveal-section').forEach((sec, idx) => {
-                            setTimeout(() => sec.classList.add('active'), idx * 180);
-                        });
-                    }, 400);
+                        winnerBanner.classList.add('visible');
+                        
+                        /* 배너 노출 직후 슬로건 & 화면 요소들 순차적 개시 */
+                        setTimeout(() => {
+                            sloganTarget.style.opacity = '1';
+                            setTimeout(() => {
+                                marqueeBg.classList.add('visible');
+                                document.querySelectorAll('.reveal-section').forEach((sec, idx) => {
+                                    setTimeout(() => sec.classList.add('active'), idx * 180);
+                                });
+                            }, 300);
+                        }, 350);
+                    }, 200);
                 }
             }
             nameTarget.textContent = ""; type();
