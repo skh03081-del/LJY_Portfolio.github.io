@@ -221,7 +221,7 @@
         .gear-skill-item i { color: var(--pubg-yellow); width: 16px; text-align: center; }
         .gear-skill-item .stat-val { font-family: 'Barlow Condensed', sans-serif; font-weight: 800; color: var(--pubg-gold); font-size: 0.95rem; }
 
-        /* --- 7. MODAL VIEW (하단 여백 및 스크롤 최적화) --- */
+        /* --- 7. MODAL VIEW (PDF 뷰어 비율 및 짤림 교정) --- */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(5, 7, 10, 0.95); z-index: 10005; justify-content: center; align-items: center; backdrop-filter: blur(12px); cursor: pointer; }
         .modal-content { background: var(--pubg-dark); border: 2px solid var(--pubg-yellow); border-radius: 2px; width: 96%; max-width: 1300px; height: 92vh; overflow: hidden; position: relative; display: flex; flex-direction: column; cursor: default; box-shadow: 0 0 50px rgba(255, 158, 0, 0.3); }
         
@@ -238,7 +238,7 @@
         .close-system-btn:hover { background: var(--pubg-yellow); color: #000; box-shadow: 0 0 15px var(--pubg-yellow); }
 
         .modal-body-scroll { flex-grow: 1; overflow-y: auto; scroll-behavior: smooth; }
-        .modal-inner-content { padding: 20px 30px 30px; } 
+        .modal-inner-content { padding: 20px 30px 40px; } 
         
         .game-desc-panel { background: var(--pubg-card); border-left: 4px solid var(--pubg-yellow); padding: 14px 18px; margin-bottom: 15px; text-align: left; font-size: 0.92rem; font-family: 'Noto Sans KR', sans-serif; }
         .mission-log { border: 1px solid var(--pubg-border); border-top: 3px solid var(--pubg-yellow); padding: 16px 20px; margin-bottom: 20px; background: var(--pubg-card); text-align: left; font-family: 'Noto Sans KR', sans-serif; }
@@ -253,15 +253,16 @@
 
         .viewer-container { width: 100%; background: #07090c; padding: 20px 0 30px; border-top: 1px solid var(--pubg-border); border-bottom: 1px solid var(--pubg-border); text-align: center; }
         
-        .pdf-viewer { width: 82%; height: 660px; display: none; margin: 0 auto 25px; border: 1px solid var(--pubg-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
-        .pdf-viewer.narrow { width: 56% !important; } 
+        /* [핵심 수정] PDF 슬라이드가 잘리지 않도록 16:9 비율 및 너비 자동 조절 */
+        .pdf-viewer { width: 95%; height: 680px; aspect-ratio: 16 / 9; display: none; margin: 0 auto 20px; border: 1px solid var(--pubg-border); box-shadow: 0 10px 30px rgba(0,0,0,0.8); background: #12161F; }
+        .pdf-viewer.narrow { width: 58% !important; height: 720px !important; aspect-ratio: auto !important; } 
         .pdf-viewer.active { display: block; }
         
-        .video-container { width: 82%; aspect-ratio: 16 / 9; display: none; margin: 0 auto 25px; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
+        .video-container { width: 95%; aspect-ratio: 16 / 9; display: none; margin: 0 auto 20px; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .video-container.active { display: block; }
         .video-container iframe { width: 100%; height: 100%; border: none; }
 
-        .excel-combined-container { display: none; flex-direction: column; align-items: center; width: 82%; margin: 0 auto 25px; gap: 20px; }
+        .excel-combined-container { display: none; flex-direction: column; align-items: center; width: 95%; margin: 0 auto 20px; gap: 20px; }
         .excel-combined-container.active { display: flex !important; }
         .combined-video-frame { width: 100% !important; aspect-ratio: 16/9; border: 2px solid var(--pubg-yellow); overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.8); }
         .combined-video-frame iframe { width: 100%; height: 100%; border: none; }
@@ -278,7 +279,7 @@
             .project-card { flex-direction: column; height: auto; }
             .card-img-box { width: 100%; height: 180px; border-right: none; border-bottom: 1px solid var(--pubg-border); }
             .card-info-box { width: 100%; padding: 16px; }
-            .pdf-viewer, .video-container, .excel-combined-container, .data-access-card { width: 95% !important; } 
+            .pdf-viewer, .video-container, .excel-combined-container, .data-access-card { width: 100% !important; } 
         }
     </style>
 </head>
@@ -719,8 +720,8 @@
                                 <div class="data-access-card"><p>기획 의도가 담긴 실제 엑셀 시뮬레이션 데이터를 다운로드하세요.</p><a href="${as.downloadUrl}" download class="btn-pixel">DOWNLOAD FILE (.xlsm)</a></div>
                             </div>`;
                 }
-                /* PDF 자동 줌을 80%로 설정하여 가독성 확보 */
-                return `<iframe class="pdf-viewer ${as.isNarrow?'narrow':''} ${isActive}" id="view-${idSuffix}" src="${as.url}#zoom=80&toolbar=0"></iframe>`;
+                /* [핵심 수정] #view=FitH 옵션으로 PDF 문서의 가로 폭을 iframe 너비에 맞춰 자동 확대/축소 */
+                return `<iframe class="pdf-viewer ${as.isNarrow?'narrow':''} ${isActive}" id="view-${idSuffix}" src="${as.url}#view=FitH&toolbar=0&navpanes=0"></iframe>`;
             }).join('');
 
             document.getElementById('assetTabs').innerHTML = p.assets.map((as, idx) => `<button class="asset-btn ${idx===0?'active':''}" onclick="switchTab(this, '${as.title}-${idx}'.replace(/\\s+/g, '-'), event)">${as.title}</button>`).join('');
